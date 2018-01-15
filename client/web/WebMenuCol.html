@@ -1,0 +1,19 @@
+<template name="WebMenuCol">
+    {{#if special}}
+        <div class="special">
+            <div class="menu-content">
+                <div class="menu-heading">{{name}}</div>
+                <div class="description">{{desc}}
+                <div class="price">{{price}}</div>
+                </div>
+            </div>
+        </div>
+        {{else}}
+            <div class="menu-content">
+                <div class="menu-heading">{{name}}</div>
+                <div class="description">{{desc}}
+                <div class="price">{{price}}</div>
+                </div>
+            </div>
+    {{/if}}
+</template>

@@ -1,0 +1,775 @@
+normalize-css()
+
+// Material Shadows
+shadow-level(l = 1)
+    if l == -1
+        box-shadow: inset -2px 7px 9px -7px rgba(0,0,0,0.7);
+    if l == 0
+        box-shadow: none;
+    if l == 1
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    if l == 2
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    if l == 3
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    if l == 4
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    if l == 5
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+
+// Common Transition
+trans($sec = 0.3s)
+    transition: all $sec ease
+// Grid
+$xsmall = 340px
+$small = 500px
+$med = 700px
+$large = 960px
+$wide = 1200px
+
+// Colors
+black = #222
+grey = #D8D8D8
+light-grey = #EEE
+purp = #3F3E42
+red = #E54B4B
+light-red = #fff86e
+dark-light-red = #66A6A6
+green = #CBE56C
+blue = #16528E
+bright-blue = #246EB9
+navColor = #1d2120
+light-blue = #E54B4B
+navSide = #E54B4B
+// light-red = #CA5765
+// pink = #CF256D
+// orange = #E8846B
+// blue  = #246EB9
+// green = #4CB944
+ white = #FDFFFC
+// beige = #F5EE9E
+// red   = #F06543 
+
+z = {
+    neg: -7,
+    lowest: 1,
+    low: 4,
+    mid: 5,
+    video: 6,
+    header: 7,
+    nav: 8,
+    mini: 9,
+    modal: 10,
+    highest: 11
+}
+
+social = {
+    twitter: #00aced,
+    facebook: #3b5998,
+    google: #dd4b39,
+    youtube: #bb0000
+}
+
+$side-nav = 100px
+$side-nav-large = 200px
+
+html
+    box-sizing: border-box
+    height: auto;
+
+*, *:before, *:after
+    box-sizing: inherit
+
+body
+    background light-grey
+    //padding: 0px 0 150px
+    //background: url("./img/chalkboard-dark.jpg")
+    height: 100%;
+footer p
+    color white
+    text-align: center
+    padding: 24px
+    font-family 'Lora' sans-serif
+footer
+    //margin-top: 10%;
+    ul
+        text-align: center;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        align-content: center;
+        font-family 'Lora' sans-serif
+        li
+            display: inline;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-family 'Lora' sans-serif
+input 
+    font-family 'Lora' sans-serif
+header
+    font-family: 'Lora', sans-serif;
+    color #FFF 
+    background: #324A5E
+    fixed top left
+    width 100%
+    height 70px  
+    z-index: z.header
+    shadow-level(2)
+    clearfix()
+    h1 
+        margin 0
+        font-size 1.6em 
+        float left
+    .login-buttons-dropdown-align-right
+        float right
+        a
+            color #FFF
+            text-decoration none 
+
+p
+    color #333 
+a
+    text-decoration none !important
+    font-size 1.6em
+    font-family: 'Satisfy';
+    color blue
+// .dropdown, .dropdown {
+//     position: fixed;
+//     top: 22px;
+//     left: 80px;
+//     list-style: none;
+//     font-family: 'Lora' sans-serif !important;
+// }
+.boxPriceMenu
+    float right
+    padding-top 10px
+    font-size 1.4em
+    font-style italic
+    font-weight 700
+.logo
+    height 50px
+    width 50px
+.page-title
+    color navSide
+    text-transform uppercase
+    text-align center
+    margin-bottom 30px
+.home-bg
+    background: url("./img/jumbotron/hop.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+.billboard
+    @media screen and (max-width: 680px)
+        background: url("./img/jumbotron/hop.jpg") no-repeat center center
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        padding-top 44%
+        padding-bottom: 31%
+    background: url("./img/jumbotron/hop.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width 100%
+    padding-top 20%
+    padding-bottom: 20% 
+    color white
+    font-size 2em
+    font-family: 'Lora', sans-serif;
+    text-align center 
+    h1
+        @media screen and (max-width: 680px)
+            font-size: 1.6em
+            padding: 45px;
+        width: 100%
+        font-size: 4.6em
+        font-family: 'Satisfy';
+        margin 0
+        color: #05181e
+        //background-color: rgba(154,217,248,0.6)
+        padding: 90px;
+        text-shadow: 2px 2px #fff
+    h4
+        font-size: 1.0em
+        color: #B56B4D
+        font-family: 'Lora', sans-serif;
+.billboard-text {
+    display: block
+    margin: 0 auto
+    width: 100%
+    //background-color: rgba(255,255,255,0.8)
+}
+#pancakes
+    @media screen and (max-width: 800px)
+        width: 300px
+    width: 500px
+    border solid 4px #fff
+    margin-left 10%
+    top: 100px
+    position: relative
+.main-layout
+    lost-center 90%
+    margin-top 20px 
+    padding-bottom 120px
+    +above($med)
+        lost-center 90%
+        padding-left $side-nav
+    +above($large)
+        lost-center 80%
+        margin-top 40px
+        padding-left $side-nav-large
+    
+.new-recipe
+    margin-bottom 20px 
+
+.new-recipe-container
+    position relative
+    background #FFF
+    padding 20px 
+    margin-bottom 20px 
+    shadow-level(2) 
+    .fa-close
+        position absolute
+        top 0
+        right 0
+        padding 20px   
+    label
+        display block
+        margin-bottom 10px 
+    textarea, input
+        width 100% 
+
+.btn, button
+    display inline-block
+    cursor pointer
+    background purp
+    color #FFF
+    text-decoration none
+    text-transform uppercase
+    padding 5px 15px
+    border solid 3px purp
+    border-radius 2px
+    font-weight 800
+    shadow-level(1)
+    trans()
+    &:hover
+        background @background - 20
+        border-color @background
+        shadow-level(2)
+    &.btn-primary
+        background #B9333D
+        border-color #B9333D
+        color white
+        &:hover
+            background @background - 40
+            border-color @background
+    &.btn-deny
+        background purp
+        border solid 3px @background
+        &:hover
+            background @background - 20
+            border-color @background
+    &.btn-text
+        color white
+        background transparent
+        border solid 2px purp
+        shadow-level(0)
+        &:hover
+            background light-red
+            border-color @background
+            shadow-level(1)
+    &.btn-text-dark
+        color #FFF
+        background transparent
+        border solid 2px #FFF
+        shadow-level(0)
+        &:hover
+            background #FFF
+            color light-blue 
+            border-color @background
+            shadow-level(1)
+    &.btn-confirmation
+        color black
+        background green
+        border solid 2px @background
+        &:hover
+            background @background - 20
+            border-color light-blue
+    &.btn-cancel
+        color #FFF
+        background transparent
+        border solid 2px #FFF 
+        opacity 0.4
+        shadow-level(-1)
+        &:hover
+            background navColor
+            color #FFF
+            opacity 1
+            shadow-level(2)
+            border-color @background
+
+input, select, textarea
+    color purp
+    background #FFF
+    border solid 2px light-grey
+    border-radius 2px
+    font-weight 800
+    width 100% 
+    padding 6px 10px
+    margin-bottom 10px  
+    &.static-input
+        border none
+        background transparent
+
+.list-group
+    list-style none
+    padding 0
+    
+.panel-body
+    .form-group
+        lost-column 1/2 
+        
+.autoform-remove-item.btn
+    background light-grey
+    box-shadow none
+    border none
+    border-radius 50%
+    font-size 1em
+    height: 25px
+    width: 25px
+    text-align: center
+    display: block
+    padding: 0
+
+.autoform-add-item.btn
+    width 100%
+    border-radius 0
+    border none
+    box-shadow none
+    background light-grey
+     
+
+.autoform-remove-item-wrap
+    vertical-align middle 
+
+.side-nav
+    fixed bottom left
+    height 100px
+    width 100%
+    overflow hidden 
+    background #05181e
+    // #78A1BB original blue
+    color #FFF
+    z-index: z.header
+    shadow-level(2)
+    ul
+        margin 0
+        padding 0
+        display flex
+        justify-content space-between 
+        list-style none
+    a
+        color #FFF
+        text-decoration none
+        padding 20px 20px
+        display block
+        text-align center
+        trans()
+        &:hover, &.active
+            background purp 
+    i
+        display block
+        font-size 1.2em
+        margin-bottom 10px 
+    +above($med)
+        height 100%
+        z-index: z.mid
+        padding 120px 0
+        fixed top left
+        width $side-nav
+        ul 
+            display block
+        shadow-level(-1)
+        a
+            padding 20px 10px
+            &:hover, &.active
+                border-left 4px solid light-red
+    +above($large)
+        width $side-nav-large
+        a
+            padding 20px 20px
+            &:hover, &.active
+                border-left 10px solid light-red
+.recipes
+    //padding-bottom 130px
+
+
+.recipe
+    background #FFF 
+    padding 0 20px 20px
+    margin-bottom 20px
+    position relative 
+    z-index 1
+    shadow-level(1)
+    trans()
+    .btn-primary, .btn-deny
+        display block
+    &.in-menu
+        background 	#EBF5EE
+        color #FFF
+        h3
+            color: black !important
+            border-bottom: rgba(255,255,255, 0.6) solid 3px
+    h3
+        font-size: 3em;
+        opacity: 0.9;
+        border-bottom: rgba(0,0,0, 0.3) solid 3px
+        margin-top 0
+        margin-bottom 10px 
+    button
+        margin-top 20px 
+    .fa-trash, .fa-pencil
+        opacity 0.3
+        cursor pointer
+        position absolute
+        top 0
+        right 0
+        font-size 1.6em  
+        display block
+        padding 20px 
+        color black
+        trans()
+        &:hover
+            color red 
+            opacity 0.6
+    .fa-pencil
+        right 40px
+        &:hover
+            color purple
+    .ingredient
+        display inline-block
+        margin-right 10px 
+        font-size 1.2em 
+    &:hover 
+        shadow-level(3)
+        // animation card 0.6s ease 1 forwards
+
+@font-face 
+    font-family: reenie-beanie;
+    src: url('/fonts/reeniebeanie-webfont.eot');
+    src: url('/fonts/reeniebeanie-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/reeniebeanie-webfont.woff2') format('woff2'),
+         url('/fonts/reeniebeanie-webfont.woff') format('woff'),
+         url('/fonts/reeniebeanie-webfont.ttf') format('truetype'),
+         url('/fonts/reeniebeanie-webfont.svg#reenie_beanieregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+@font-face {
+    font-family: Satisfy;
+    src: url(/fonts/Satisfy-Regular.ttf);
+}
+
+@keyframes card
+    0%
+        transform translate3d(0, 0, 0)
+    50%
+        transform translate3d(0, -135px, 0)
+    51%
+        z-index 10
+        transform translate3d(0, -135px, 0)
+    100%
+        z-index 10
+        transform translate3d(0, 0, 0)
+
+            
+.menu-item
+    @extend .recipe
+    
+.shopping-list
+    @extend .recipe
+    padding 50px 5%
+    list-style none
+    li
+        font-size 2em 
+        padding 20px
+        border-bottom 1px solid light-grey
+        border-top 1px solid light-grey
+        & + li 
+            border-top none
+
+.login-buttons-dropdown-align-
+    #login-dropdown-list
+        right 0
+        left auto 
+        a 
+            color light-blue
+.pull-right {
+    float: right !important;
+    left: 20px;
+} 
+#login-other-options
+    a
+        color black
+        float left !important
+// About
+.about-container
+    border-top: 15px solid black
+    border-bottom: 15px solid black
+    background-color #333333
+    //background: url("./img/wall.jpg") left
+    background-size: 100%
+    width: 100%
+    height: 100%
+    padding-top: 100px
+    padding-bottom: 100px
+    padding-left 10%
+    padding-right 10%
+.about-title
+    border-left: 8px solid black
+    border-right: 8px solid black
+    border-top: 8px solid black
+    font-size 3.6em
+    color #F1EBE0
+    text-align center
+    padding 20px 20% 20px 20%
+    font-family 'OpenSans-Light'
+    background-color: rgba(14,36,42,0.9)
+.about-content
+    border-left: 8px solid black
+    border-right: 8px solid black
+    border-bottom: 8px solid black
+    font-size 2.0em
+    color #F1EBE0
+    text-align center
+    padding-left: 5%
+    padding-right: 5%
+    padding-bottom: 40px
+    height: 100%
+    width: 100%
+    font-family 'OpenSans-Light'
+    background-color: rgba(14,36,42,0.9)
+// Web Menu
+.web-menu-container
+    // border-top: 25px solid #A25749
+    height 100%
+    padding-bottom 240px
+.category-container
+    float left
+    padding 20px 12px 20px 12px
+    height 100% 
+    width 100%
+.web-menu-title
+    font-size 5.5em
+    color white
+    text-align center
+    padding 100px 0px 20px 0px
+    font-family "Lora"
+.web-menu-heading
+    color #000
+    text-align center
+    font-size 5.5em
+    padding 100px 0px 20px 0px
+    font-family "Satisfy"
+.web-menu-item
+    padding-bottom: 200px
+    font-family "Lora"
+.menu-heading 
+  font-size 3.5em
+  color#000
+  font-family "Lora"
+.price 
+  color: #000
+  font-size 1.0em
+.description
+    font-size 2.2em
+    color: #000
+    font-family "Lora"
+    font-style: normal;
+    font-weight: 500;
+.control-label
+    color #515769
+.special 
+  border 4px solid white
+  padding 6px
+  border-radius: 3px
+.checkbox
+    label
+        color #515769
+// .nav
+//     overflow: hidden;
+//     background-color: #333;
+//     position: fixed; /* Set the navbar to fixed position */
+//     top: 0; /* Position the navbar at the top of the page */
+//     width: 100%;
+//     z-index: 99999
+//     ul 
+//         list-style-type: none;
+//         margin: 0;
+//         padding: 0;
+//         overflow: hidden;
+//         background-color: #FAE7C9
+//     li 
+//         float: right;
+    
+
+//     li
+//         a 
+//             display: block;
+//             color: #515769;
+//             text-align: center;
+//             padding: 14px 16px;
+//             text-decoration: none;
+//     li 
+//         a:hover 
+//             color: #57680B;
+.footer
+    font-family: 'Lora', sans-serif;
+    color #05181E
+    background: white
+    fixed bottom left
+    width 100%
+    height 70px  
+    z-index: z.header
+    text-align: center
+.footer-pad
+    margin-bottom 100px
+.main-container
+    background light-grey
+    padding: 0px 0px 150px
+    background-color: white
+    height: 100%;
+.wrap
+    min-height:100%;
+    height:auto !important;
+    height:100%;    
+    margin: 0 auto -60px;  /* Bottom value must = footer height */
+.footer-icons
+    padding-top 10px
+    a
+        color #05181E
+        font-size 2.4em
+    a:hover
+        color #fae7c9
+.navbar
+    margin-bottom: 0px !important
+    background-color: white
+    padding-top: 10px
+.navbar-default
+    border: none !important
+    border-radius: 0px
+.navbar-brand 
+    font-size: 40px
+    color: #333 !important
+.navbar-header
+    height 60px
+//     li
+//         a
+//             color: white !important
+#login-dropdown-list a
+    color: #666
+    font-family: "Lora"
+#login-other-options a
+    color: black
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus
+    color: black
+.navbar-default .navbar-nav > li > a
+    color: #05181E
+.navbar-default .navbar-nav > li > a:hover
+    color: grey
+.admin-links .navbar-default .navbar-nav
+    li
+        a 
+            color: #3f3e42;
+        a:hover
+            color #b9333d;
+            background-color: #ebf5ee;
+.navbar-nav > li > .dropdown-menu
+    background-color: #ebf5ee;
+.admin-nav
+    +above($med)
+        padding-left $side-nav
+    +above($large)
+        padding-left $side-nav-large
+.dropdown
+    color black !important
+
+// Profile
+.profile-links
+    a
+        padding: 2px 16px 0px 0px
+        color: #B9333D
+.storeNumber
+    padding-left: 16px
+    font-size: .6em
+    float: right
+#admin-nav
+    background-color: #fff
+#admin-actions
+    color: #ccc;
+    a:hover
+        color #EBF5EE
+#admin-actions:hover, #admin-actions:visited
+    background-color: #3f3e42    
+.black-bg 
+    background-color: #333333
+
+#slideshow {
+    position relative;
+    margin: 0px auto; 
+    width: 740px; 
+    height: 740px; 
+    box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+    
+}
+#slideshow img {
+    width: 700px; 
+    height: 700px
+}
+
+#slideshow > div {
+    position: absolute; 
+    top: 20px; 
+    left: 10px; 
+    right: 10px; 
+    bottom: 10px;
+}
+
+.apps {
+    top: 100px
+    position: relative
+}
+.showcase {
+    border-top: solid 20px #05181e;
+    border-bottom: solid 20px #05181e;
+    margin-bottom: 80px;
+    font-family: "Lora";
+}
+.showcase .showcase-text {
+  padding: 3rem;
+}
+
+.showcase .showcase-img {
+  min-height: 30rem;
+  background-size: cover; }
+.showcase ul {
+    list-style: none;
+}
+.showcase b {
+    font-size: 30px;
+}
+@media (min-width: 768px) {
+  .showcase .showcase-text {
+    //padding: 7rem; 
+    }
+}
+
+.border-bottom {
+    border-bottom: solid 8px #05181e;    
+}

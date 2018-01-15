@@ -1,0 +1,32 @@
+<template name="Appetizers">
+    <!-- Section 1 -->
+    <div class="web-menu-heading">Appetizers</div>
+    <div class="web-menu-container">
+        <div class="category-container">
+        <!-- Column 1 -->
+            <div class="col-md-4 col-sm-4">
+            {{#each cat1col1}}
+                {{> WebMenuCol}}
+            {{else}}
+                <h1></h1>
+            {{/each}}
+            </div>
+            <!-- Column 2 -->
+            <div class="col-md-4 col-sm-4">
+            {{#each cat1col2}}
+                {{> WebMenuCol}}
+            {{else}}
+                <h1></h1>
+            {{/each}}
+            </div>
+            <!-- Column 3 -->
+            <div class="col-md-4 col-sm-4">
+            {{#each cat1col3}}
+                {{> WebMenuCol}}
+            {{else}}
+                <h1></h1>
+            {{/each}}
+            </div>
+        </div>
+    </div>
+</template>

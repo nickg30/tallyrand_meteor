@@ -1,0 +1,20 @@
+<template name="BasicInfo">
+    <h1>Business Information</h1>
+        {{#if $.Session.get 'editProfile'}}
+            {{> EditProfile}}
+        {{else}}
+        {{/if}}
+    <section class="recipes">
+        {{#if Template.subscriptionsReady}}
+            {{#if notEmpty}}
+                {{#each profile}}
+                    {{> Profile}}
+                {{/each}}
+            {{else}}
+                {{> EditProfile}}
+            {{/if}}
+        {{else}}
+            <p>Loading</p>
+        {{/if}}
+    </section>
+</template>

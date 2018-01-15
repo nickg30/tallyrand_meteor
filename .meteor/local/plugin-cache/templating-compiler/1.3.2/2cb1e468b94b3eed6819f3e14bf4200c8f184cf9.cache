@@ -1,0 +1,1 @@
+{"head":"","body":"","js":"\nTemplate.__checkName(\"Heading\");\nTemplate[\"Heading\"] = new Template(\"Template.Heading\", (function() {\n  var view = this;\n  return HTML.Raw(\"<h1>Your Restaurant</h1>\\n    <h4>Fresh food and beverages prepared daily</h4>\");\n}));\n","bodyAttrs":{}}

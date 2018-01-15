@@ -1,0 +1,16 @@
+<template name="Profile">
+        <article class="recipe">
+            
+            <h3>{{businessName}}</h3>
+            <h2>{{address.city}}<span class="storeNumber">store #{{storeNumber}}</span></h2>
+            <div class="profile-links">
+                <a href="tel:{{phoneNumber}}"><i class="fa fa-phone"></i></a>
+                <a href="mailto:{{email}}"><i class="fa fa-paper-plane"></i></a>
+            </div>
+            {{#if editMode}}
+                {{> quickForm collection="Profile" id=updateProfileId type="update" doc=this autosave=true}}
+            {{/if}}
+                <i class="fa fa-trash"></i>
+                <i class="fa fa-pencil"></i>
+        </article>
+    </template>

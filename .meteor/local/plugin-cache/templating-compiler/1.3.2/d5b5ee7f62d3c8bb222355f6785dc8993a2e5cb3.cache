@@ -1,0 +1,1 @@
+{"head":"","body":"","js":"\nTemplate.__checkName(\"About-Page\");\nTemplate[\"About-Page\"] = new Template(\"Template.About-Page\", (function() {\n  var view = this;\n  return \"\";\n}));\n","bodyAttrs":{}}
