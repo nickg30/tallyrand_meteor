@@ -16226,8 +16226,8 @@ a {
   background: url("img/jumbotron/hop.jpg") no-repeat center center fixed;
   background-size: cover;
   width: 100%;
-  padding-top: 20%;
-  padding-bottom: 20%;
+  padding-top: 5%;
+  padding-bottom: 5%;
   color: #fdfffc;
   font-size: 2em;
   font-family: 'Lora', sans-serif;
@@ -16249,7 +16249,7 @@ a {
   font-family: 'Satisfy';
   margin: 0;
   color: #05181e;
-  padding: 90px;
+  padding: 90px 90px 0px 90px;
   text-shadow: 2px 2px #fff;
 }
 
@@ -16385,7 +16385,6 @@ button {
   background: #3f3e42;
   color: #fff;
   text-decoration: none;
-  text-transform: uppercase;
   padding: 5px 15px;
   border: solid 3px #3f3e42;
   border-radius: 2px;
@@ -17113,6 +17112,94 @@ textarea.static-input {
 
 .border-bottom {
   border-bottom: solid 8px #05181e;
+}
+
+.page-section {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.section-heading {
+  font-family: 'Lora';
+}
+
+.section-heading .section-heading-upper {
+  display: block;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.section-heading .section-heading-lower {
+  display: block;
+  font-size: 3rem;
+  font-weight: 100;
+}
+
+.bg-faded {
+  background-color: rgba(255,255,255,0.85);
+}
+
+.intro {
+  position: relative;
+  color: #000;
+}
+
+@media (min-width: 794px) {
+  .intro .intro-img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 636px) {
+  .intro .intro-img {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .intro .intro-img {
+    width: 75%;
+    float: right;
+  }
+
+  .intro .intro-text {
+    left: 0;
+    width: 60%;
+    margin-top: 12rem;
+    position: absolute;
+    font-family: 'Lora';
+    padding-bottom: 40px;
+  }
+
+  .intro .intro-text .intro-button {
+    width: 100%;
+    left: 0;
+    position: absolute;
+    bottom: -2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .intro .intro-text {
+    width: 45%;
+  }
+}
+
+.btn-xl {
+  font-weight: 400;
+  font-size: 1.8rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.rounded {
+  border-radius: 0.75rem !important;
+}
+
+.shadow {
+  box-shadow: 2px 2px 5px #222;
 }
 
 @-webkit-keyframes card {

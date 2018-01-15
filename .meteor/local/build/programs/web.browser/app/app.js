@@ -17,10 +17,35 @@ Template["Heading"] = new Template("Template.Heading", (function() {            
       class: "billboard"                                                                                              // 9
     }, "\n            ", HTML.DIV({                                                                                   // 10
       class: "billboard-text"                                                                                         // 11
-    }, "\n                ", HTML.H1("57th Anniversary"), "\n                ", HTML.H4("Homemade Quality You Can Taste!"), "\n            "), "\n            ", HTML.Comment(' <div id="slideshow">\n                <div>\n                    <img src="img/jumbotron/turkeymelt.jpg">\n                </div>\n                <div>\n                    <img src="img/jumbotron/pancakes.jpg">\n                </div>\n                <div>\n                    <img src="img/jumbotron/dad.jpg">\n                </div>\n             </div> '), "\n        "), "\n    " ];
-  });                                                                                                                 // 13
-}));                                                                                                                  // 14
-                                                                                                                      // 15
+    }, "\n                ", HTML.H1("57th Anniversary"), "\n            "), "\n            ", HTML.SECTION({         // 12
+      class: "page-section clearfix"                                                                                  // 13
+    }, "\n                ", HTML.DIV({                                                                               // 14
+      class: "container"                                                                                              // 15
+    }, "\n                  ", HTML.DIV({                                                                             // 16
+      class: "intro"                                                                                                  // 17
+    }, "\n                    ", HTML.IMG({                                                                           // 18
+      class: "intro-img img-fluid mb-3 mb-lg-0 rounded shadow",                                                       // 19
+      src: "img/bar2.jpg",                                                                                            // 20
+      alt: ""                                                                                                         // 21
+    }), "\n                    ", HTML.DIV({                                                                          // 22
+      class: "intro-text left-0 text-center bg-faded p-5 rounded shadow"                                              // 23
+    }, "\n                      ", HTML.H2({                                                                          // 24
+      class: "section-heading mb-4"                                                                                   // 25
+    }, "\n                        ", HTML.SPAN({                                                                      // 26
+      class: "section-heading-upper"                                                                                  // 27
+    }, "Newly remodeled"), "\n                        ", HTML.SPAN({                                                  // 28
+      class: "section-heading-lower"                                                                                  // 29
+    }, "Bar and Lounge"), "\n                      "), "\n                      ", HTML.P({                           // 30
+      class: "mb-3"                                                                                                   // 31
+    }, "Enjoy a handmade cocktail or a refreshing draft beer with one of our classic appetizers in our newly remodeled bar!"), "\n                      ", HTML.DIV({
+      class: "intro-button mx-auto"                                                                                   // 33
+    }, "\n                        ", HTML.A({                                                                         // 34
+      class: "btn btn-primary btn-xl shadow",                                                                         // 35
+      href: "#"                                                                                                       // 36
+    }, "Check out the menu..."), "\n                      "), "\n                    "), "\n                  "), "\n                "), "\n              "), "\n        "), "\n    " ];
+  });                                                                                                                 // 38
+}));                                                                                                                  // 39
+                                                                                                                      // 40
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 },"template.WebFooter.js":function(){
@@ -193,7 +218,7 @@ Template["Appetizers"] = new Template("Template.Appetizers", (function() {      
 Template.__checkName("FrontPage");                                                                                    // 2
 Template["FrontPage"] = new Template("Template.FrontPage", (function() {                                              // 3
   var view = this;                                                                                                    // 4
-  return [ Spacebars.include(view.lookupTemplate("Heading")), HTML.Raw('\n    <section class="showcase">\n        <div class="container-fluid p-0">\n          <div class="row no-gutters border-bottom">\n            <div class="col-lg-6 order-lg-1 my-auto showcase-text">\n              <h2>The Bar</h2>\n              <p class="lead mb-0">Enjoy a handmade cocktail or a refreshing draft beer with one of our classic appetizers in our newly remodeled bar!</p>\n            <b>Check out the menu...</b>\n            </div>\n            <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url(\'img/bar2.jpg\');"></div>\n          </div>\n          <div class="row no-gutters">\n            <div class="col-lg-6 my-auto showcase-text">\n              <h2>Monday</h2>\n              <ul class="lead mb-0">\n                  <li>Pot Roast Dinner</li>\n                  <li>Pot Roast French Dip</li>\n                  <li>Pot Roast Twister</li>\n                  <li>Chicken Fried Steak with Country gravy</li>\n                  <li>Pork Chops with Country gravy</li>\n              </ul>\n            </div>\n            <div class="col-lg-6 text-white showcase-img" style="background-image: url(\'img/pot_roast.jpg\');"></div>\n          </div>\n        </div>\n      </section>  \n    '), Spacebars.include(view.lookupTemplate("WebFooter")) ];
+  return [ Spacebars.include(view.lookupTemplate("Heading")), HTML.Raw('\n    <section class="showcase">\n        <div class="container-fluid p-0">\n          <div class="row no-gutters">\n            <div class="col-lg-6 my-auto showcase-text">\n              <h2>Monday</h2>\n              <ul class="lead mb-0">\n                  <li>Pot Roast Dinner</li>\n                  <li>Pot Roast French Dip</li>\n                  <li>Pot Roast Twister</li>\n                  <li>Chicken Fried Steak with Country gravy</li>\n                  <li>Pork Chops with Country gravy</li>\n              </ul>\n            </div>\n            <div class="col-lg-6 text-white showcase-img" style="background-image: url(\'img/pot_roast.jpg\');"></div>\n          </div>\n        </div>\n      </section>  \n    '), Spacebars.include(view.lookupTemplate("WebFooter")) ];
 }));                                                                                                                  // 6
                                                                                                                       // 7
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
