@@ -16218,15 +16218,15 @@ a {
 }
 
 .home-bg {
-  background: url("img/jumbotron/hop.jpg") no-repeat center center fixed;
+  background: url("img/jumbotron/storefront-dark.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
 .billboard {
-  background: url("img/jumbotron/hop.jpg") no-repeat center center fixed;
+  background: url("img/jumbotron/storefront-dark.jpg") no-repeat center center fixed;
   background-size: cover;
   width: 100%;
-  padding-top: 5%;
+  padding-top: 10%;
   padding-bottom: 5%;
   color: #fdfffc;
   font-size: 2em;
@@ -16236,10 +16236,11 @@ a {
 
 @media screen and (max-width: 680px) {
   .billboard {
-    background: url("img/jumbotron/hop.jpg") no-repeat center center;
+    background: url("img/jumbotron/storefront-dark.jpg") no-repeat center center;
     background-size: cover;
     padding-top: 44%;
     padding-bottom: 31%;
+    font-size: 3em;
   }
 }
 
@@ -16248,7 +16249,7 @@ a {
   font-size: 4.6em;
   font-family: 'Satisfy';
   margin: 0;
-  color: #05181e;
+  color: #fdbe2c;
   padding: 90px 90px 0px 90px;
   text-shadow: 2px 2px #fff;
 }
@@ -16403,15 +16404,15 @@ button:hover {
 
 .btn.btn-primary,
 button.btn-primary {
-  background: #b9333d;
-  border-color: #b9333d;
+  background: #d9453d;
+  border-color: #d9453d;
   color: #fdfffc;
 }
 
 .btn.btn-primary:hover,
 button.btn-primary:hover {
-  background: #910b15;
-  border-color: #910b15;
+  background: #b11d15;
+  border-color: #b11d15;
 }
 
 .btn.btn-deny,
@@ -17087,10 +17088,18 @@ textarea.static-input {
 }
 
 .showcase {
-  border-top: solid 20px #05181e;
-  border-bottom: solid 20px #05181e;
+  border-top: solid 12px #ccc;
+  border-bottom: solid 12px #ccc;
+  background: #05181e;
+  color: #fff;
   margin-bottom: 80px;
   font-family: "Lora";
+  text-align: center;
+}
+
+.showcase h2 {
+  font-family: "Satisfy";
+  font-size: 5em;
 }
 
 .showcase .showcase-text {
@@ -17111,16 +17120,16 @@ textarea.static-input {
 }
 
 .border-bottom {
-  border-bottom: solid 8px #05181e;
+  border-bottom: solid 12px #ccc;
+}
+
+.border-top {
+  border-top: solid 12px #ccc;
 }
 
 .page-section {
   margin-top: 5rem;
   margin-bottom: 5rem;
-}
-
-.section-heading {
-  font-family: 'Lora';
 }
 
 .section-heading .section-heading-upper {
@@ -17131,8 +17140,9 @@ textarea.static-input {
 
 .section-heading .section-heading-lower {
   display: block;
-  font-size: 3rem;
+  font-size: 5rem;
   font-weight: 100;
+  font-family: 'Satisfy';
 }
 
 .bg-faded {
@@ -17179,9 +17189,20 @@ textarea.static-input {
   }
 }
 
+.intro p {
+  color: #000;
+}
+
 @media (min-width: 1200px) {
   .intro .intro-text {
     width: 45%;
+  }
+}
+
+@media (max-width: 615px) {
+  .intro .intro-text,
+  .intro-img {
+    display: none;
   }
 }
 
@@ -17199,7 +17220,51 @@ textarea.static-input {
 }
 
 .shadow {
-  box-shadow: 2px 2px 5px #222;
+  box-shadow: 6px 6px 10px #222;
+}
+
+.bg-primary {
+  padding: 8rem 0;
+  background-color: #b53730 !important;
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+.bg-primary h2 {
+  font-size: 40px;
+  color: #000;
+  font-family: "Satisfy";
+}
+
+.bg-primary p {
+  font-family: "Lora";
+}
+
+.bg-primary h2,
+p {
+  color: #fff;
+  display: block;
+  margin: 0 auto;
+}
+
+ul {
+  padding: 6px 0px 0px 0px;
+}
+
+.lead {
+  margin-bottom: 0px;
+}
+
+.mx-auto {
+  width: 50%;
+  float: left;
+  margin-top: 80px;
+}
+
+.dad {
+  border: solid 8px #ccc;
+  border-radius: 10px;
 }
 
 @-webkit-keyframes card {

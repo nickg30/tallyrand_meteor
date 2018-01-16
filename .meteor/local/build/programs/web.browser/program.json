@@ -1016,11 +1016,11 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/app/app.js?hash=abec3e92b4bdd0a5f1e8f8f696ecb922a0f3995c",
+      "url": "/app/app.js?hash=1a3812b13d0420961cac65664c32563250286ae0",
       "sourceMap": "app/app.js.map",
-      "sourceMapUrl": "/app/abec3e92b4bdd0a5f1e8f8f696ecb922a0f3995c.map",
-      "size": 171275,
-      "hash": "abec3e92b4bdd0a5f1e8f8f696ecb922a0f3995c"
+      "sourceMapUrl": "/app/1a3812b13d0420961cac65664c32563250286ae0.map",
+      "size": 174245,
+      "hash": "1a3812b13d0420961cac65664c32563250286ae0"
     },
     {
       "path": "packages/mdg_validation-error.js",
@@ -1047,11 +1047,11 @@
       "where": "client",
       "type": "css",
       "cacheable": true,
-      "url": "/merged-stylesheets.css?hash=41d59556f3c4688f4040927c7b75080b094e8def",
+      "url": "/merged-stylesheets.css?hash=92d6b0a0e7d2575be9cf4e307c0b5eb2361a8de4",
       "sourceMap": "merged-stylesheets.css.map",
-      "sourceMapUrl": "/41d59556f3c4688f4040927c7b75080b094e8def.map",
-      "size": 454404,
-      "hash": "41d59556f3c4688f4040927c7b75080b094e8def"
+      "sourceMapUrl": "/92d6b0a0e7d2575be9cf4e307c0b5eb2361a8de4.map",
+      "size": 455244,
+      "hash": "92d6b0a0e7d2575be9cf4e307c0b5eb2361a8de4"
     },
     {
       "path": "packages/fortawesome_fontawesome/upstream/fonts/fontawesome-webfont.eot",
@@ -1288,6 +1288,51 @@
       "hash": "dd754ebfa7f879561e6bb9498f84f637a9409a03"
     },
     {
+      "path": "app/img/country-fried.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/img/country-fried.jpg",
+      "size": 89790,
+      "hash": "acaa596d20dca926665b600d8b5a72c28ca6d889"
+    },
+    {
+      "path": "app/img/dad.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/img/dad.jpg",
+      "size": 76041,
+      "hash": "5ad0bfcbf31580ede8e9a3f497142be54a5acf4c"
+    },
+    {
+      "path": "app/img/meatloaf.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/img/meatloaf.jpg",
+      "size": 238021,
+      "hash": "c9af383e3a8d8499cea94263670b08cadb1b0f60"
+    },
+    {
+      "path": "app/img/pork-tend.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/img/pork-tend.jpg",
+      "size": 178021,
+      "hash": "a0f8cda61660035a1aa57e6317a76ffa035fe63e"
+    },
+    {
+      "path": "app/img/pork.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/img/pork.jpg",
+      "size": 181761,
+      "hash": "62614d9f9fb7e09aee75ee83d1616da05b1280f3"
+    },
+    {
       "path": "app/img/pot_roast.jpg",
       "where": "client",
       "type": "asset",
@@ -1333,15 +1378,6 @@
       "hash": "1d8b2915eef9b15e8742bdd9e31370aec9b9b3c5"
     },
     {
-      "path": "app/img/jumbotron/dad.jpg",
-      "where": "client",
-      "type": "asset",
-      "cacheable": false,
-      "url": "/img/jumbotron/dad.jpg",
-      "size": 1437297,
-      "hash": "981064ca43080c0cc570cd7b20b9632d92629aef"
-    },
-    {
       "path": "app/img/jumbotron/hop.jpg",
       "where": "client",
       "type": "asset",
@@ -1367,6 +1403,15 @@
       "url": "/img/jumbotron/pancakes.jpg",
       "size": 117862,
       "hash": "14855fe949c2a303d506045158f0fac27b64308a"
+    },
+    {
+      "path": "app/img/jumbotron/storefront-dark.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/img/jumbotron/storefront-dark.jpg",
+      "size": 1634432,
+      "hash": "71db07f8585882a0eee798553fcf864a02a6ae7d"
     },
     {
       "path": "app/img/jumbotron/storefront-light.jpg",

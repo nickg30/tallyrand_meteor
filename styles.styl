@@ -158,27 +158,28 @@ a
     text-align center
     margin-bottom 30px
 .home-bg
-    background: url("./img/jumbotron/hop.jpg") no-repeat center center fixed; 
+    background: url("./img/jumbotron/storefront-dark.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 .billboard
     @media screen and (max-width: 680px)
-        background: url("./img/jumbotron/hop.jpg") no-repeat center center
+        background: url("./img/jumbotron/storefront-dark.jpg") no-repeat center center
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
         padding-top 44%
         padding-bottom: 31%
-    background: url("./img/jumbotron/hop.jpg") no-repeat center center fixed; 
+        font-size: 3em;
+    background: url("./img/jumbotron/storefront-dark.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     width 100%
-    padding-top 5%
+    padding-top 10%
     padding-bottom: 5% 
     color white
     font-size 2em
@@ -192,7 +193,7 @@ a
         font-size: 4.6em
         font-family: 'Satisfy';
         margin 0
-        color: #05181e
+        color: #FDBE2C
         //background-color: rgba(154,217,248,0.6)
         padding: 90px 90px 0px 90px;
         text-shadow: 2px 2px #fff
@@ -264,8 +265,8 @@ a
         border-color @background
         shadow-level(2)
     &.btn-primary
-        background #B9333D
-        border-color #B9333D
+        background #D9453D
+        border-color #D9453D
         color white
         &:hover
             background @background - 40
@@ -746,10 +747,17 @@ input, select, textarea
     position: relative
 }
 .showcase {
-    border-top: solid 20px #05181e;
-    border-bottom: solid 20px #05181e;
+    border-top: solid 12px #ccc;
+    border-bottom: solid 12px #ccc;
+    background: #05181e;
+    color: #fff;
     margin-bottom: 80px;
     font-family: "Lora";
+    text-align: center;
+}
+.showcase h2 {
+    font-family: "Satisfy"; 
+    font-size: 5em   
 }
 .showcase .showcase-text {
   padding: 3rem;
@@ -771,9 +779,11 @@ input, select, textarea
 }
 
 .border-bottom {
-    border-bottom: solid 8px #05181e;    
+    border-bottom: solid 12px #ccc;    
 }
-
+.border-top {
+    border-top: solid 12px #ccc;    
+}
 
 .page-section {
   margin-top: 5rem;
@@ -782,7 +792,6 @@ input, select, textarea
 
 .section-heading {
   //text-transform: uppercase;
-  font-family: 'Lora';
 }
 
 .section-heading .section-heading-upper {
@@ -792,9 +801,10 @@ input, select, textarea
 }
 
 .section-heading .section-heading-lower {
-  display: block;
-  font-size: 3rem;
-  font-weight: 100;
+    display: block;
+    font-size: 5rem;
+    font-weight: 100;
+    font-family: 'Satisfy';
 }
 .bg-faded {
   background-color: rgba(255, 255, 255, 0.85);
@@ -833,10 +843,18 @@ input, select, textarea
     bottom: -2rem;
   }
 }
+.intro p {
+    color: #000;    
+}
 
 @media (min-width: 1200px) {
   .intro .intro-text {
     width: 45%;
+  }
+}
+@media (max-width: 615px) {
+  .intro .intro-text, .intro-img {
+    display: none;
   }
 }
 .btn-xl {
@@ -853,5 +871,41 @@ input, select, textarea
 .shadow {
   -moz-box-shadow: 2px 2px 5px #222;
   -webkit-box-shadow: 2px 2px 5px #222;
-  box-shadow: 2px 2px 5px #222;
+  box-shadow: 6px 6px 10px #222;
+}
+
+.bg-primary {
+    padding: 8rem 0;
+    background-color: #b53730!important;
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+}
+.bg-primary h2 {
+    font-size: 40px;
+    color: #000;
+    font-family: "Satisfy";
+}
+.bg-primary p {
+    font-family: "Lora";    
+}
+.bg-primary h2,p {
+    color: #fff;
+    display: block;
+    margin: 0 auto;
+}
+ul {
+    padding: 6px 0px 0px 0px;
+}
+.lead {
+ margin-bottom: 0px;
+}
+.mx-auto {
+    width: 50%;
+    float: left;
+    margin-top: 80px;
+}
+.dad {
+    border: solid 8px #ccc;
+    border-radius: 10px;
 }
