@@ -1,17 +1,17 @@
-Template.Recipes.onCreated(function(){
+Template.Apps.onCreated(function(){
 	var self = this;
 	self.autorun(function() {
 		self.subscribe('recipes');
 	});
 });
 
-Template.Recipes.helpers({
+Template.Apps.helpers({
 	recipes: ()=> {
 		return Recipes.find({"category":"Appetizers"});
 	}
 });
 
-Template.Recipes.events({
+Template.Apps.events({
 	'click .new-recipe': () => {
 		Session.set('newRecipe', true);
 	}

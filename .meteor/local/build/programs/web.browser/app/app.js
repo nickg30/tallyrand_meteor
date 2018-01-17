@@ -683,7 +683,44 @@ Template.Header.helpers({                                                       
 });                                                                                                                   // 8
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-}},"recipes":{"template.Menu.js":function(){
+}},"recipes":{"template.Apps.js":function(){
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                                    //
+// client/recipes/template.Apps.js                                                                                    //
+//                                                                                                                    //
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                                                                                      //
+                                                                                                                      // 1
+Template.__checkName("Apps");                                                                                         // 2
+Template["Apps"] = new Template("Template.Apps", (function() {                                                        // 3
+  var view = this;                                                                                                    // 4
+  return [ Blaze.If(function() {                                                                                      // 5
+    return Spacebars.dataMustache(Spacebars.dot(view.lookup("$"), "Session", "get"), "newRecipe");                    // 6
+  }, function() {                                                                                                     // 7
+    return [ "\n\t\t", Spacebars.include(view.lookupTemplate("NewRecipe")), "\n\t" ];                                 // 8
+  }, function() {                                                                                                     // 9
+    return [ "\n\t\t", HTML.BUTTON({                                                                                  // 10
+      class: "new-recipe"                                                                                             // 11
+    }, "New Menu Item"), "\n\t" ];                                                                                    // 12
+  }), "\t\n\t", HTML.SECTION({                                                                                        // 13
+    class: "recipes"                                                                                                  // 14
+  }, "\n\t\t", Blaze.If(function() {                                                                                  // 15
+    return Spacebars.call(view.templateInstance().subscriptionsReady());                                              // 16
+  }, function() {                                                                                                     // 17
+    return [ "\n\t\t\t", Blaze.Each(function() {                                                                      // 18
+      return Spacebars.call(view.lookup("recipes"));                                                                  // 19
+    }, function() {                                                                                                   // 20
+      return [ "\n\t\t\t\t", Spacebars.include(view.lookupTemplate("Recipe")), "\n\t\t\t" ];                          // 21
+    }), "\n\t\t" ];                                                                                                   // 22
+  }, function() {                                                                                                     // 23
+    return [ "\n\t\t\t", HTML.P("Loading"), "\n\t\t" ];                                                               // 24
+  }), "\n\t") ];                                                                                                      // 25
+}));                                                                                                                  // 26
+                                                                                                                      // 27
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+},"template.Menu.js":function(){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                                                    //
@@ -824,43 +861,6 @@ Template["RecipeSingle"] = new Template("Template.RecipeSingle", (function() {  
                                                                                                                       // 9
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-},"template.Recipes.js":function(){
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//                                                                                                                    //
-// client/recipes/template.Recipes.js                                                                                 //
-//                                                                                                                    //
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                                                                                                                      //
-                                                                                                                      // 1
-Template.__checkName("Recipes");                                                                                      // 2
-Template["Recipes"] = new Template("Template.Recipes", (function() {                                                  // 3
-  var view = this;                                                                                                    // 4
-  return [ Blaze.If(function() {                                                                                      // 5
-    return Spacebars.dataMustache(Spacebars.dot(view.lookup("$"), "Session", "get"), "newRecipe");                    // 6
-  }, function() {                                                                                                     // 7
-    return [ "\n\t\t", Spacebars.include(view.lookupTemplate("NewRecipe")), "\n\t" ];                                 // 8
-  }, function() {                                                                                                     // 9
-    return [ "\n\t\t", HTML.BUTTON({                                                                                  // 10
-      class: "new-recipe"                                                                                             // 11
-    }, "New Menu Item"), "\n\t" ];                                                                                    // 12
-  }), "\t\n\t", HTML.SECTION({                                                                                        // 13
-    class: "recipes"                                                                                                  // 14
-  }, "\n\t\t", Blaze.If(function() {                                                                                  // 15
-    return Spacebars.call(view.templateInstance().subscriptionsReady());                                              // 16
-  }, function() {                                                                                                     // 17
-    return [ "\n\t\t\t", Blaze.Each(function() {                                                                      // 18
-      return Spacebars.call(view.lookup("recipes"));                                                                  // 19
-    }, function() {                                                                                                   // 20
-      return [ "\n\t\t\t\t", Spacebars.include(view.lookupTemplate("Recipe")), "\n\t\t\t" ];                          // 21
-    }), "\n\t\t" ];                                                                                                   // 22
-  }, function() {                                                                                                     // 23
-    return [ "\n\t\t\t", HTML.P("Loading"), "\n\t\t" ];                                                               // 24
-  }), "\n\t") ];                                                                                                      // 25
-}));                                                                                                                  // 26
-                                                                                                                      // 27
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 },"template.ShoppingList.js":function(){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -900,6 +900,34 @@ Template["ShoppingList"] = new Template("Template.ShoppingList", (function() {  
   }), "\n\t") ];                                                                                                      // 29
 }));                                                                                                                  // 30
                                                                                                                       // 31
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+},"Apps.js":function(){
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                                    //
+// client/recipes/Apps.js                                                                                             //
+//                                                                                                                    //
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                                                                                      //
+Template.Apps.onCreated(function () {                                                                                 // 1
+	var self = this;                                                                                                     // 2
+	self.autorun(function () {                                                                                           // 3
+		self.subscribe('recipes');                                                                                          // 4
+	});                                                                                                                  // 5
+});                                                                                                                   // 6
+Template.Apps.helpers({                                                                                               // 8
+	recipes: function () {                                                                                               // 9
+		return Recipes.find({                                                                                               // 10
+			"category": "Appetizers"                                                                                           // 10
+		});                                                                                                                 // 10
+	}                                                                                                                    // 11
+});                                                                                                                   // 8
+Template.Apps.events({                                                                                                // 14
+	'click .new-recipe': function () {                                                                                   // 15
+		Session.set('newRecipe', true);                                                                                     // 16
+	}                                                                                                                    // 17
+});                                                                                                                   // 14
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 },"NewRecipe.js":function(){
@@ -1026,34 +1054,6 @@ Template.Recipe.events({                                                        
 });                                                                                                                   // 16
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-},"recipes.js":function(){
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//                                                                                                                    //
-// client/recipes/recipes.js                                                                                          //
-//                                                                                                                    //
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                                                                                                                      //
-Template.Recipes.onCreated(function () {                                                                              // 1
-	var self = this;                                                                                                     // 2
-	self.autorun(function () {                                                                                           // 3
-		self.subscribe('recipes');                                                                                          // 4
-	});                                                                                                                  // 5
-});                                                                                                                   // 6
-Template.Recipes.helpers({                                                                                            // 8
-	recipes: function () {                                                                                               // 9
-		return Recipes.find({                                                                                               // 10
-			"category": "Appetizers"                                                                                           // 10
-		});                                                                                                                 // 10
-	}                                                                                                                    // 11
-});                                                                                                                   // 8
-Template.Recipes.events({                                                                                             // 14
-	'click .new-recipe': function () {                                                                                   // 15
-		Session.set('newRecipe', true);                                                                                     // 16
-	}                                                                                                                    // 17
-});                                                                                                                   // 14
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 }},"support":{"template.Support.js":function(){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1139,16 +1139,16 @@ FlowRouter.route('/profile', {                                                  
 		BlazeLayout.render('MainLayout');                                                                                   // 42
 	}                                                                                                                    // 43
 });                                                                                                                   // 35
-FlowRouter.route('/admin-menu', {                                                                                     // 46
-	name: 'admin-menu',                                                                                                  // 47
+FlowRouter.route('/admin-apps', {                                                                                     // 46
+	name: 'admin-apps',                                                                                                  // 47
 	action: function () {                                                                                                // 48
 		if (Meteor.userId()) {                                                                                              // 49
-			FlowRouter.go('admin-menu');                                                                                       // 50
+			FlowRouter.go('admin-apps');                                                                                       // 50
 		}                                                                                                                   // 51
                                                                                                                       //
 		GAnalytics.pageview();                                                                                              // 52
 		BlazeLayout.render('MainLayout', {                                                                                  // 53
-			main: 'Recipes'                                                                                                    // 53
+			main: 'Apps'                                                                                                       // 53
 		});                                                                                                                 // 53
 	}                                                                                                                    // 54
 }); // SUPPORT                                                                                                        // 46
@@ -1373,7 +1373,7 @@ RecipeSchema = new SimpleSchema({                                               
     category: {                                                                                                       // 42
         type: String,                                                                                                 // 43
         label: "Category",                                                                                            // 44
-        allowedValues: ["Appetizers", "Tea Menu", "Category One", "Category One", "Category One", "Category One"]     // 45
+        allowedValues: ["Appetizers", "Breakfast", "Soups/Salads", "Lunch/Dinner", "From the Bar", "Dessert"]         // 45
     },                                                                                                                // 42
     column: {                                                                                                         // 54
         type: Number,                                                                                                 // 55
@@ -1466,11 +1466,11 @@ require("./client/layouts/template.HomeLayout.js");
 require("./client/layouts/template.MainLayout.js");
 require("./client/partials/template.Header.js");
 require("./client/partials/template.SideNav.js");
+require("./client/recipes/template.Apps.js");
 require("./client/recipes/template.Menu.js");
 require("./client/recipes/template.NewRecipe.js");
 require("./client/recipes/template.Recipe.js");
 require("./client/recipes/template.RecipeSingle.js");
-require("./client/recipes/template.Recipes.js");
 require("./client/recipes/template.ShoppingList.js");
 require("./client/support/template.Support.js");
 require("./client/web/template.Appetizers.js");
@@ -1484,12 +1484,12 @@ require("./client/basicinfo/editprofile.js");
 require("./client/basicinfo/profile.js");
 require("./client/config/accounts-config.js");
 require("./client/partials/header.js");
+require("./client/recipes/Apps.js");
 require("./client/recipes/NewRecipe.js");
 require("./client/recipes/RecipeSingle.js");
 require("./client/recipes/ShoppingList.js");
 require("./client/recipes/menu.js");
 require("./client/recipes/recipe.js");
-require("./client/recipes/recipes.js");
 require("./client/web/appetizers.js");
 require("./client/web/frontpage.js");
 require("./collections/profile.js");

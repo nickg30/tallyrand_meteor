@@ -44,11 +44,11 @@ RecipeSchema =  new SimpleSchema({
         label: "Category",
         allowedValues: [
             "Appetizers",
-            "Tea Menu",
-            "Category One",
-            "Category One",
-            "Category One",
-            "Category One"
+            "Breakfast",
+            "Soups/Salads",
+            "Lunch/Dinner",
+            "From the Bar",
+            "Dessert"
         ]
     },
     column: {
